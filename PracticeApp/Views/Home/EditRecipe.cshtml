@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Edit Recipe";
+}
+
+@model PracticeApp.Models.Recipe
+
+<h1>Add your favorite recipes to our database. We love eating and want your input!</h1>
+
+<div>
+    <form method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <input type="hidden" asp-for="RecipeID" />
+
+        <div class="form-group">
+            <label asp-for="RecipeName">Recipe Name:</label>
+            <input asp-for="RecipeName" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="RecipeType">Recipe Type:</label>
+            <input asp-for="RecipeType" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="NumIngredients">Number of Ingredients:</label>
+            <input asp-for="NumIngredients" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="PrepTimeInMinutes">Preparation Time in minutes:</label>
+            <input asp-for="PrepTimeInMinutes" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ServingSize">Serving Size:</label>
+            <input asp-for="ServingSize" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Notes">Notes:</label>
+            <input asp-for="Notes" class="form-control" />
+        </div>
+
+        <div class="float-end">
+            <input class="btn btn-primary" type="submit" value="Add Recipe" />
+        </div>
+
+    </form>
+</div>

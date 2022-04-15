@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "View All Recipes";
+}
+
+@model List<Recipe>
+
+<div class="text-center">
+    <h1 class="display-4">Recipes</h1>
+    <p>Learn about recipes from Utah!</p>
+</div>
+
+<table class="table table-sm table-striped table-bordered">
+
+    <thead class="bold">
+        <tr>
+            <th class="text-center">Recipe Name</th>
+            <th class="text-center">Recipe Type</th>
+            <th class="text-center">Number of Ingredients</th>
+            <th class="text-center">Preparation Time in minutes</th>
+            <th class="text-center">Serving Size</th>
+            <th class="text-center">Notes</th>
+            <th class="text-center">Edit</th>
+            <th class="text-center">Delete</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var r in Model)
+        {
+            <tr>
+                <td class="text-center">@r.RecipeName</td>
+                <td class="text-center">@r.RecipeType</td>
+                <td class="text-center">@r.NumIngredients</td>
+                <td class="text-center">@r.PrepTimeInMinutes</td>
+                <td class="text-center">@r.ServingSize</td>
+                <td class="text-center">@r.Notes</td>
+                <td class="text-center"><a asp-controller="Home" class="btn btn-info btn-sm d-flex justify-content-center" asp-action="EditRecipe" asp-route-recipeid="@r.RecipeID">🔨 Edit</a></td>
+                <td class="text-center"><a asp-controller="Home" class="btn btn-info btn-sm d-flex justify-content-center" asp-action="DeleteRecipe" asp-route-recipeid="@r.RecipeID">🗑️ Delete</a></td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
